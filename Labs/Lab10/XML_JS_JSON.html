@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Lab 10 - XML, JavaScript and JSON</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+		
+var linkArray = [];		
+function convertXMLtoJSON() {
+	//Write code to retrieve  the content of the XML file using JavaScript.
+	var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", "Books.xml",false);
+        xmlhttp.send();
+        xmlDoc =xmlhttp.responseXML;
+    //Write code to create an array of JSON objects equivalent to the provided XML file (Each book info is an instance of a JSON object).
+        var author = xmlDoc.getElementsByTagName('author');
+        var title = xmlDoc.getElementsByTagName('title');
+        var genre = xmlDoc.getElementsByTagName('genre');
+        var price = xmlDoc.getElementsByTagName('price');
+        var pu = xmlDoc.getElementsByTagName('publish_date');
+        var des = xmlDoc.getElementsByTagName('description');
+        
+        var arrAuthor = new Array();
+        var arrTitle = new Array();
+        var arrGenre = new Array();
+        var arrPrice = new Array();
+        var arrPu = new Array();
+        var arrDes = new Array();
+	//Write Javascript loop statement to display the elements of the array of JSON objects 
+	for (i = 0; i<author.length;i++){
+            arrAuthor.push(author[i].childNodes[0].nodeValue);
+        }
+	
+        for (i = 0; i<title.length;i++){
+            arrTitle.push(title[i].childNodes[0].nodeValue);
+        }
+        
+        for (i = 0; i<genre.length;i++){
+            arrGenre.push(genre[i].childNodes[0].nodeValue);
+        }
+        
+        for (i = 0; i<price.length;i++){
+            arrPrice.push(price[i].childNodes[0].nodeValue);
+        }
+        
+        for (i = 0; i<pu.length;i++){
+            arrPu.push(pu[i].childNodes[0].nodeValue);
+        }
+        
+        for (i = 0; i<des.length;i++){
+            arrDes.push(des[i].childNodes[0].nodeValue);
+        }
+        var output = "<tr><th>IDS</th><th>Author</th><th>Title</th><th>Genre</th><th>Price</th><th>Published Date</th><th>Description</th></tr>";
+        for(var s in arrAuthor){
+            output+="\<tr><td>" + s + "</td><td>"
+            + arrAuthor[s] + "</td><td>"
+            + arrTitle[s] + "</td><td>"
+            + arrGenre[s] + "</td><td>"
+            + arrPrice[s] + "</td><td>"
+            + arrPu[s] + "</td><td>"
+            + arrDes[s] + "</td></tr>"
+        }
+        document.getElementById("books").innerHTML = output;
+} // End function
+
+</script>
+</head>
+
+<body>
+<h3>Lab 10- Displaying Array of JSON objects </h3>
+    
+    <table id="books" border="1">      
+        	<tr>			    
+				<td><input onclick="convertXMLtoJSON()" name="btnConvertJSON" id="btnConvertJSON" value="JSONDisplay!" type="button"></td>
+		    </tr>       
+   </table>
+</body>
+</html>

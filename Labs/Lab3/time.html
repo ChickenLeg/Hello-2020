@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <h1 class="solid italic" style="color:#303C6C">HTML5 Tables</h1>
+    </head>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        h1.italic {font-style: italic;}
+        h1.solid{
+            border-style: solid;
+            border-color: #E3AFBC;}
+        nav {
+            word-spacing: 20px;
+            font-size: 20px;
+            font-weight: bolder;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+        body{
+            background-color: #E3E2DF;
+        }
+        table,th,td {
+            background-color: white;
+            border: 1px solid black;
+            text-align: left;
+            border-collapse: collapse;
+        }
+        td,th {
+            color: #1F2605; 
+            padding: 5px;
+            text-align: left;
+        }
+        footer{
+            text-align: justify;
+            color: #303C6C;
+        }
+        tr{
+            
+            height:70px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+    </style>
+    <body>
+        <nav>
+            <a href="index.html" style="color:#5D001E">Home</a>   |
+            <a href="ColRowSpan.html" style="color:#5D001E">Span</a>   |
+            <a href="Canlendar.html" style="color:#5D001E">Calendar</a>   |
+            <a href="Timetable.html" style="color:#5D001E">Timetable</a>   
+        </nav>
+        <table style="width:auto;">
+            <caption style="font-family:cursive; color: #c38d9e;">TIME TABLE</caption>
+                <tr>
+                    <th> </th>
+                    <th>MO</th>
+                    <th>TU</th>
+                    <th>WE</th>
+                    <th>TH</th>
+                    <th >FR</th>
+                </tr>
+            <tr>
+                 <td style="text-align: start">8:00 </td>
+                 <td rowspan="2" style="background-color: #4D6D9A;">CST8216 300 </td>
+                 <td rowspan="2" style="background-color: #4D6D9A;">CST8216 301 </td>
+                 <td rowspan="2" style="background-color: #99CED3;">ENL2019T 301 </td>
+                 <td rowspan="2" style="background-color: #EDB5BF;">CST8234 010 </td>
+                 <td> </td> 
+                </tr>
+            <tr>
+                 <td>9:00 </td>
+                 <td > </td>
+                </tr>
+            <tr>
+                 <td>10:00 </td>
+                 <td rowspan="2" style="background-color: #86B3D1;">CST8130 </td>
+                 <td></td>
+                 <td rowspan="2" style="background-color: #EDB5BF;">CST8234 010 </td>
+                 <td></td>
+                 <td></td>
+                </tr>
+            <tr>
+                 <td>11:00 </td>
+                 <td style="background-color: #EDB5BF;">CST8234 010 </td>
+                 <td></td>
+                 <td></td>
+                </tr>
+            <tr>
+                 <td>12:00 </td>
+                 <td></td>
+                 <td rowspan="2" style="background-color: #86B3D1;">CST8130 </td>
+                 <td> </td>
+                 <td> </td>
+                 <td> </td>
+                </tr>
+            <tr>
+                 <td>13:00 </td>
+                 <td> </td>i
+                 <td> </td>
+                 <td> </td>
+                 <td> </td> 
+                </tr>
+           
+        </table>
+        <br>
+        <br>
+        <footer style="color: #303C6C">
+            <p2>Posted by: Yanni Li<br></p2>
+            <p2>Contact information: <a herf="li000555@algonquinlive.com">li000555@algonquinlive.com</a></p2>
+        </footer>
+    </body>
+    
+</html>
